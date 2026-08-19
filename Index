@@ -1,23 +1,210 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TaleTom</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="TaleTom — пространство для историй, книг и авторов."
+  >
+
+  <title>TaleTom — истории живут здесь</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Привет, мир!</h1>
-    <p>TaleTom родился.</p>
-</body>
-</html><!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TaleTom</title>
-</head>
-<body>
-    <h1>Привет, мир!</h1>
-    <p>TaleTom родился.</p>
+
+  <header>
+    <a class="brand" href="#">
+      <b>Tale</b><i>Tom</i>
+    </a>
+
+    <nav>
+      <a href="#home">Главная</a>
+      <a href="#books">Книги</a>
+      <a href="#authors">Авторы</a>
+      <a href="#about">О проекте</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+      <div>
+        <p class="eyebrow">
+          Литературное пространство
+        </p>
+
+        <h1>
+          У каждой истории<br>
+          должно быть своё место.
+        </h1>
+
+        <p class="lead">
+          TaleTom — дом для книг, авторов и миров,
+          в которые хочется возвращаться.
+        </p>
+
+        <a class="button" href="#books">
+          Открыть истории
+        </a>
+      </div>
+
+      <div class="quill">
+        ❧
+      </div>
+
+    </section>
+
+
+    <!-- BOOKS -->
+
+    <section id="books">
+
+      <p class="eyebrow">
+        Библиотека
+      </p>
+
+      <h2>
+        Истории TaleTom
+      </h2>
+
+      <p class="intro">
+        Пока здесь только начинается жизнь.
+        Скоро появятся первые книги.
+      </p>
+
+
+      <div class="grid">
+
+        <article>
+
+          <div class="cover">
+            TALE<br>
+            TOM
+          </div>
+
+          <small>СКОРО</small>
+
+          <h3>
+            Первая история
+          </h3>
+
+          <p>
+            Здесь появится книга,
+            её описание и имя автора.
+          </p>
+
+        </article>
+
+
+        <article>
+
+          <div class="cover light">
+            NEW<br>
+            WORLD
+          </div>
+
+          <small>СКОРО</small>
+
+          <h3>
+            Новый мир
+          </h3>
+
+          <p>
+            Место для следующей книги
+            или авторской серии.
+          </p>
+
+        </article>
+
+
+        <article>
+
+          <div class="cover gold">
+            YOUR<br>
+            STORY
+          </div>
+
+          <small>СКОРО</small>
+
+          <h3>
+            Ваша история
+          </h3>
+
+          <p>
+            TaleTom будет расти
+            вместе со своими авторами.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- AUTHORS -->
+
+    <section id="authors" class="simple">
+
+      <p class="eyebrow">
+        Авторы
+      </p>
+
+      <h2>
+        Не платформа. Место встречи.
+      </h2>
+
+      <p>
+        Этот раздел мы наполним,
+        когда определим страницы авторов
+        и механику публикации.
+      </p>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about" class="simple dark">
+
+      <p class="eyebrow">
+        О TaleTom
+      </p>
+
+      <h2>
+        Мы только начали.
+      </h2>
+
+      <p>
+        18 августа 2026 года TaleTom
+        впервые вышел в интернет.
+        Дальше — больше.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <span class="brand">
+      <b>Tale</b><i>Tom</i>
+    </span>
+
+    <span>
+      © 2026 TaleTom
+    </span>
+
+  </footer>
+
 </body>
 </html>
