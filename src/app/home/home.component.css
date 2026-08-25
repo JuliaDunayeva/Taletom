@@ -1,116 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  --ink: #1f1f1f;
-  --muted: #6d6a65;
-  --gold: #b9954f;
-  --paper: #f8f6f1;
-  --line: #ded9cf;
+    --ink: #1f1f1f;
+    --muted: #6d6a65;
+    --gold: #b9954f;
+    --paper: #f8f6f1;
+    --line: #ded9cf;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Inter, sans-serif;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, sans-serif;
 }
 
 
 /* HEADER */
 
 header {
-  min-height: 82px;
-  padding: 0 7vw;
+    min-height: 82px;
+    padding: 0 7vw;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  gap: 28px;
+    gap: 28px;
 
-  border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 
-  position: sticky;
-  top: 0;
-  z-index: 5;
+    position: sticky;
+    top: 0;
+    z-index: 5;
 
-  background: rgba(248, 246, 241, 0.95);
+    background: rgba(248, 246, 241, 0.95);
 }
 
 
 /* LOGO */
 
 .brand {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.2rem;
-  font-weight: 700;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.2rem;
+    font-weight: 700;
 
-  letter-spacing: -0.05em;
+    letter-spacing: -0.05em;
 
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .brand b {
-  color: var(--ink);
+    color: var(--ink);
 }
 
 .brand i {
-  color: var(--gold);
-  font-style: normal;
+    color: var(--gold);
+    font-style: normal;
 }
 
 
 /* NAVIGATION */
 
 nav {
-  display: flex;
-  gap: 28px;
+    display: flex;
+    gap: 28px;
 }
 
 nav a {
-  color: var(--ink);
-  text-decoration: none;
+    color: var(--ink);
+    text-decoration: none;
 
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
 nav a:hover {
-  color: var(--gold);
+    color: var(--gold);
 }
 
 
 /* HERO */
 
 .hero {
-  min-height: 68vh;
+    min-height: 68vh;
 
-  padding: 10vh 9vw;
+    padding: 10vh 9vw;
 
-  display: grid;
-  grid-template-columns: minmax(0, 760px) 1fr;
-  align-items: center;
+    display: grid;
+    grid-template-columns: minmax(0, 760px) 1fr;
+    align-items: center;
 
-  background:
+    background:
 
-    radial-gradient(
-      circle at 82% 45%,
-      rgba(185, 149, 79, 0.14),
-      transparent 25%
-    ),
+        radial-gradient(circle at 82% 45%,
+            rgba(185, 149, 79, 0.14),
+            transparent 25%),
 
-    linear-gradient(
-      135deg,
-      #fbfaf7,
-      #f1ede4
-    );
+        linear-gradient(135deg,
+            #fbfaf7,
+            #f1ede4);
 }
 
 
@@ -118,14 +114,14 @@ nav a:hover {
 
 .eyebrow,
 small {
-  color: var(--gold);
+    color: var(--gold);
 
-  font-size: 0.72rem;
-  font-weight: 600;
+    font-size: 0.72rem;
+    font-weight: 600;
 
-  letter-spacing: 0.2em;
+    letter-spacing: 0.2em;
 
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 
@@ -134,29 +130,29 @@ small {
 h1,
 h2,
 h3 {
-  font-family: "Cormorant Garamond", serif;
+    font-family: "Cormorant Garamond", serif;
 }
 
 h1 {
-  margin: 15px 0 24px;
+    margin: 15px 0 24px;
 
-  font-size: clamp(3.5rem, 7vw, 7rem);
+    font-size: clamp(3.5rem, 7vw, 7rem);
 
-  line-height: 0.88;
+    line-height: 0.88;
 
-  letter-spacing: -0.055em;
+    letter-spacing: -0.055em;
 }
 
 h2 {
-  margin: 10px 0;
+    margin: 10px 0;
 
-  font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: clamp(2.5rem, 4vw, 4rem);
 }
 
 h3 {
-  margin: 8px 0;
+    margin: 8px 0;
 
-  font-size: 1.7rem;
+    font-size: 1.7rem;
 }
 
 
@@ -166,52 +162,52 @@ h3 {
 .intro,
 article p,
 .simple p {
-  color: var(--muted);
+    color: var(--muted);
 
-  line-height: 1.7;
+    line-height: 1.7;
 }
 
 .lead {
-  max-width: 650px;
+    max-width: 650px;
 
-  font-size: 1.15rem;
+    font-size: 1.15rem;
 }
 
 
 /* BUTTON */
 
 .button {
-  display: inline-block;
+    display: inline-block;
 
-  margin-top: 20px;
+    margin-top: 20px;
 
-  padding: 14px 22px;
+    padding: 14px 22px;
 
-  background: var(--ink);
-  color: white;
+    background: var(--ink);
+    color: white;
 
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .button:hover {
-  background: var(--gold);
+    background: var(--gold);
 }
 
 
 /* DECORATIVE QUILL */
 
 .quill {
-  justify-self: center;
+    justify-self: center;
 
-  color: var(--gold);
+    color: var(--gold);
 
-  font-family: Georgia, serif;
+    font-family: Georgia, serif;
 
-  font-size: clamp(8rem, 18vw, 18rem);
+    font-size: clamp(8rem, 18vw, 18rem);
 
-  transform: rotate(-12deg);
+    transform: rotate(-12deg);
 
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 
@@ -219,123 +215,123 @@ article p,
 
 #books,
 .simple {
-  padding: 90px 9vw;
+    padding: 90px 9vw;
 }
 
 .intro {
-  max-width: 650px;
+    max-width: 650px;
 }
 
 
 /* BOOK GRID */
 
 .grid {
-  display: grid;
+    display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
-  gap: 28px;
+    gap: 28px;
 
-  margin-top: 42px;
+    margin-top: 42px;
 }
 
 
 /* BOOK CARD */
 
 article {
-  padding: 18px;
+    padding: 18px;
 
-  border: 1px solid var(--line);
+    border: 1px solid var(--line);
 
-  background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.55);
 }
 
 
 /* TEMPORARY BOOK COVERS */
 .cover {
-  overflow: hidden;
-  padding: 0;
+    overflow: hidden;
+    padding: 0;
 }
 
 .cover img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .cover {
-  aspect-ratio: 2 / 3;
+    aspect-ratio: 2 / 3;
 
-  display: grid;
-  place-items: center;
+    display: grid;
+    place-items: center;
 
-  margin-bottom: 22px;
+    margin-bottom: 22px;
 
-  background: var(--ink);
-  color: var(--gold);
+    background: var(--ink);
+    color: var(--gold);
 
-  font-family: "Cormorant Garamond", serif;
+    font-family: "Cormorant Garamond", serif;
 
-  font-size: 2.2rem;
+    font-size: 2.2rem;
 
-  text-align: center;
+    text-align: center;
 
-  letter-spacing: 0.08em;
+    letter-spacing: 0.08em;
 }
 
 .cover.light {
-  background: #e7e2d8;
-  color: var(--ink);
+    background: #e7e2d8;
+    color: var(--ink);
 }
 
 .cover.gold {
-  background: var(--gold);
-  color: white;
+    background: var(--gold);
+    color: white;
 }
 
 
 /* SIMPLE SECTIONS */
 
 .simple {
-  border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line);
 }
 
-.simple > * {
-  max-width: 760px;
+.simple>* {
+    max-width: 760px;
 }
 
 
 /* DARK SECTION */
 
 .dark {
-  background: var(--ink);
-  color: white;
+    background: var(--ink);
+    color: white;
 }
 
 .dark p:last-child {
-  color: #c9c4bb;
+    color: #c9c4bb;
 }
 
 
 /* FOOTER */
 
 footer {
-  padding: 38px 7vw;
+    padding: 38px 7vw;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line);
 
-  color: var(--muted);
+    color: var(--muted);
 
-  font-size: 0.8rem;
+    font-size: 0.8rem;
 }
 
 footer .brand {
-  font-size: 1.7rem;
+    font-size: 1.7rem;
 }
 
 
@@ -343,41 +339,41 @@ footer .brand {
 
 @media (max-width: 760px) {
 
-  header {
-    padding: 16px 6vw;
+    header {
+        padding: 16px 6vw;
 
-    align-items: flex-start;
-  }
+        align-items: flex-start;
+    }
 
-  nav {
-    gap: 10px;
+    nav {
+        gap: 10px;
 
-    flex-wrap: wrap;
+        flex-wrap: wrap;
 
-    justify-content: flex-end;
-  }
+        justify-content: flex-end;
+    }
 
-  nav a {
-    font-size: 0.76rem;
-  }
+    nav a {
+        font-size: 0.76rem;
+    }
 
-  .hero {
-    grid-template-columns: 1fr;
+    .hero {
+        grid-template-columns: 1fr;
 
-    padding: 11vh 7vw 8vh;
-  }
+        padding: 11vh 7vw 8vh;
+    }
 
-  .quill {
-    display: none;
-  }
+    .quill {
+        display: none;
+    }
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
+    .grid {
+        grid-template-columns: 1fr;
+    }
 
-  #books,
-  .simple {
-    padding: 65px 7vw;
-  }
+    #books,
+    .simple {
+        padding: 65px 7vw;
+    }
 
 }
