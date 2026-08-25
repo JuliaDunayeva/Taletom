@@ -4,6 +4,6 @@ export const environment = {
   // Supabase → Project Settings → API
   // В браузер кладём ТОЛЬКО public/publishable (anon) key.
   // Никогда не вставляй сюда service_role / secret key.
-  supabaseUrl: 'PASTE_YOUR_SUPABASE_URL_HERE',
-  supabaseAnonKey: 'PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE'
+  supabaseUrl: 'https://wbykyqknhmzdyoaoupri.supabase.co',
+  supabaseAnonKey: 'sb_publishable_Jmwto7PNIFcaE5jXdaEh1A_kdhTQiKJ'
 };

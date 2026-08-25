@@ -2,11 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Author, Book } from './models';
 import { SupabaseService } from './supabase.service';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HomeComponent],
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
