@@ -1,1 +1,125 @@
-<p>auth works!</p>
+
+<main class="auth-page">
+  <a class="back-link" routerLink="/">← На главную</a>
+
+  <section class="auth-card" *ngIf="!session; else loggedIn">
+    <div class="auth-heading">
+      <p class="eyebrow">TaleTom</p>
+      <h1>{{ mode === 'login' ? 'Войти' : 'Создать аккаунт' }}</h1>
+      <p>
+        {{ mode === 'login'
+          ? 'Войдите, чтобы продолжить.'
+          : 'Только самое необходимое. Остальное можно добавить позже.' }}
+      </p>
+    </div>
+
+    <div class="mode-switch" aria-label="Выбор режима авторизации">
+      <button
+        type="button"
+        [class.active]="mode === 'login'"
+        (click)="switchMode('login')">
+        Вход
+      </button>
+      <button
+        type="button"
+        [class.active]="mode === 'register'"
+        (click)="switchMode('register')">
+        Регистрация
+      </button>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <ng-container *ngIf="mode === 'register'">
+        <label for="displayName">Имя или псевдоним</label>
+        <input
+          id="displayName"
+          type="text"
+          formControlName="displayName"
+          autocomplete="name"
+          placeholder="Например, Крис Дурбин">
+        <small
+          class="field-error"
+          *ngIf="form.controls.displayName.touched && form.controls.displayName.invalid">
+          Введите имя или псевдоним.
+        </small>
+      </ng-container>
+
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        autocomplete="email"
+        placeholder="you@example.com">
+      <small class="field-error" *ngIf="form.controls.email.touched && form.controls.email.invalid">
+        Введите корректный email.
+      </small>
+
+      <label for="password">Пароль</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        [autocomplete]="mode === 'login' ? 'current-password' : 'new-password'"
+        placeholder="Минимум 6 символов">
+      <small class="field-error" *ngIf="form.controls.password.touched && form.controls.password.invalid">
+        Пароль должен содержать минимум 6 символов.
+      </small>
+
+      <ng-container *ngIf="mode === 'register'">
+        <label for="passwordConfirm">Подтвердите пароль</label>
+        <input
+          id="passwordConfirm"
+          type="password"
+          formControlName="passwordConfirm"
+          autocomplete="new-password"
+          placeholder="Повторите пароль">
+        <small
+          class="field-error"
+          *ngIf="form.controls.passwordConfirm.touched && form.controls.passwordConfirm.errors?.['required']">
+          Повторите пароль.
+        </small>
+        <small
+          class="field-error"
+          *ngIf="form.controls.passwordConfirm.touched && form.controls.passwordConfirm.errors?.['passwordMismatch']">
+          Пароли не совпадают.
+        </small>
+      </ng-container>
+
+      <button class="primary-button" type="submit" [disabled]="loading">
+        {{ loading ? 'Подождите…' : (mode === 'login' ? 'Войти' : 'Зарегистрироваться') }}
+      </button>
+
+      <button
+        *ngIf="mode === 'login'"
+        class="text-button"
+        type="button"
+        [disabled]="loading"
+        (click)="resetPassword()">
+        Забыли пароль?
+      </button>
+    </form>
+
+    <p class="message success" *ngIf="message">{{ message }}</p>
+    <p class="message error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </section>
+
+  <ng-template #loggedIn>
+    <section class="auth-card logged-in-card">
+      <p class="eyebrow">TaleTom</p>
+      <h1>Вы уже вошли</h1>
+      <p class="logged-email">{{ session?.user?.email }}</p>
+      <p>Сессия сохранена в браузере и будет восстановлена после перезагрузки страницы.</p>
+
+      <div class="logged-actions">
+        <a class="primary-link" routerLink="/author">В кабинет автора</a>
+        <button class="secondary-button" type="button" [disabled]="loading" (click)="signOut()">
+          {{ loading ? 'Подождите…' : 'Выйти' }}
+        </button>
+      </div>
+
+      <p class="message success" *ngIf="message">{{ message }}</p>
+      <p class="message error" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </section>
+  </ng-template>
+</main>

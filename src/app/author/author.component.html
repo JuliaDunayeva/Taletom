@@ -1,0 +1,207 @@
+<div *ngIf="loading" class="loading">
+  Загружаем кабинет автора...
+</div>
+<div *ngIf="!loading" class="author-layout">
+  <aside class="sidebar">
+    <div class="author-name">
+      {{ displayName }}
+    </div>
+    <div class="author-email">
+      {{ email }}
+    </div>
+    <nav>
+      <button
+        type="button"
+        [class.active]="activeSection === 'books'"
+        (click)="showSection('books')">
+        Мои книги
+      </button>
+      <button
+        type="button"
+        [class.active]="activeSection === 'create-book'"
+        (click)="showSection('create-book')">
+        Создать книгу
+      </button>
+    </nav>
+    <button
+      type="button"
+      class="logout"
+      (click)="signOut()">
+      Выйти
+    </button>
+  </aside>
+  <main class="author-content">
+    <p
+      *ngIf="errorMessage"
+      class="message error">
+      {{ errorMessage }}
+    </p>
+    <p
+      *ngIf="successMessage"
+      class="message success">
+      {{ successMessage }}
+    </p>
+    <!-- МОИ КНИГИ -->
+    <section *ngIf="activeSection === 'books'">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">TALETOM</p>
+          <h1>Мои книги</h1>
+        </div>
+        <button
+          type="button"
+          class="primary-button"
+          (click)="showSection('create-book')">
+          Создать книгу
+        </button>
+      </div>
+      <div *ngIf="books.length === 0" class="empty-state">
+        <h2>Здесь пока пусто</h2>
+        <p>
+          Создайте первую книгу — главы можно будет
+          добавлять после её создания.
+        </p>
+        <button
+          type="button"
+          class="primary-button"
+          (click)="showSection('create-book')">
+          Создать первую книгу
+        </button>
+      </div>
+      <div *ngIf="books.length > 0" class="book-list">
+        <article
+          *ngFor="let book of books"
+          class="book-card">
+          <div class="book-cover-placeholder">
+            TALETOM
+          </div>
+          <div class="book-info">
+            <h2>{{ book.title }}</h2>
+            <p *ngIf="book.series_name">
+              {{ book.series_name }}
+            </p>
+            <p *ngIf="book.short_description">
+              {{ book.short_description }}
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- СОЗДАТЬ КНИГУ -->
+    <section *ngIf="activeSection === 'create-book'">
+      <p class="eyebrow">TALETOM</p>
+      <h1>Новая книга</h1>
+      <p class="section-intro">
+        Для начала достаточно основной информации.
+        Всё остальное можно будет изменить позже.
+      </p>
+      <form
+        [formGroup]="bookForm"
+        (ngSubmit)="createBook()">
+        <label for="title">
+          Название *
+        </label>
+        <input
+          id="title"
+          type="text"
+          formControlName="title"
+          placeholder="Название книги">
+        <small
+          *ngIf="
+            bookForm.controls.title.touched &&
+            bookForm.controls.title.invalid
+          "
+          class="field-error">
+          Введите название книги.
+        </small>
+        <label for="genre">
+          Жанр *
+        </label>
+        <select
+          id="genre"
+          formControlName="genre">
+          <option value="">
+            Выберите жанр
+          </option>
+          <option value="romance">
+            Роман
+          </option>
+          <option value="fantasy">
+            Фэнтези
+          </option>
+          <option value="science-fiction">
+            Научная фантастика
+          </option>
+          <option value="thriller">
+            Триллер
+          </option>
+          <option value="detective">
+            Детектив
+          </option>
+          <option value="historical">
+            Историческая проза
+          </option>
+          <option value="drama">
+            Драма
+          </option>
+          <option value="other">
+            Другое
+          </option>
+        </select>
+        <label for="seriesName">
+          Цикл / серия
+        </label>
+        <input
+          id="seriesName"
+          type="text"
+          formControlName="seriesName"
+          placeholder="Например: Код Гнева">
+        <label for="shortDescription">
+          Короткое описание
+        </label>
+        <input
+          id="shortDescription"
+          type="text"
+          formControlName="shortDescription"
+          maxlength="250"
+          placeholder="Одна короткая фраза о книге">
+        <label for="annotation">
+          Аннотация
+        </label>
+        <textarea
+          id="annotation"
+          formControlName="annotation"
+          rows="8"
+          maxlength="3000"
+          placeholder="Расскажите читателю о книге">
+        </textarea>
+        <label for="contentWarnings">
+          Предупреждения о содержании
+        </label>
+        <textarea
+          id="contentWarnings"
+          formControlName="contentWarnings"
+          rows="3"
+          placeholder="Необязательно. Например: сцены насилия, сильная лексика">
+        </textarea>
+        <p class="field-hint">
+          Оставьте пустым, если предупреждения не нужны.
+        </p>
+        <div class="form-actions">
+          <button
+            type="button"
+            class="secondary-button"
+            (click)="showSection('books')">
+            Отмена
+          </button>
+          <button
+            type="submit"
+            class="primary-button"
+            [disabled]="savingBook">
+            {{ savingBook ? 'Создаём...' : 'Создать книгу' }}
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+</div>
